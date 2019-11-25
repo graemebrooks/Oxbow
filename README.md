@@ -24,6 +24,7 @@ Oxbow is an application for aspiring art critics. Using a large collection of cl
 - HTML, CSS, Javascript
 - Node, Express
 - MongoDB, Mongoose
+- AWS, Heroku
 
 ## Asset Credits
 
