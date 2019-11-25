@@ -17,7 +17,7 @@ Oxbow is an application for aspiring art critics. Using a large collection of cl
 
 ## Data Structure
 
-![Entity Relationship Diagram](https://i.imgur.com/GUlibvK.png)
+![Entity Relationship Diagram](https://i.imgur.com/dHMNikd.png)
 
 ## Technologies Used
 
