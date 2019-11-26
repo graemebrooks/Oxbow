@@ -103,6 +103,7 @@ a {
 	background-color: rgb(255, 0, 0);
 	color: white;
 	font-family: 'Lato', sans-serif;
+	margin-right: 10px;
 }
 
 #splash-signup .btn:hover,
@@ -169,6 +170,10 @@ a {
 	display: flex;
 	justify-content: flex-start;
 	width: 90%;
+}
+
+#critique-art-btn {
+	background-color: teal;
 }
 
 #next-art {
