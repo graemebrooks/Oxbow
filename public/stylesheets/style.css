@@ -105,3 +105,26 @@ a {
 #splash-signup .btn:hover {
 	background-color: rgb(255, 217, 0);
 }
+
+#error-body {
+	display: grid;
+	grid-template-columns: 2fr 4fr;
+	background-color: #eec336;
+	height: 100vh;
+	width: 100vw;
+	font-family: 'Lato', sans-serif;
+	font-size: 2rem;
+	color: #284864;
+	padding: 30px;
+}
+
+#not-found-image {
+	width: 700px;
+}
+
+.error-page {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}

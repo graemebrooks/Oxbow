@@ -14,7 +14,8 @@
 		"http-errors": "~1.6.3",
 		"mongoose": "^5.7.12",
 		"morgan": "~1.9.1",
-		"nodemon": "^2.0.1"
+		"nodemon": "^2.0.1",
+		"request": "^2.88.0"
 	},
 	"description": "## Purpose",
 	"main": "./bin/www",
