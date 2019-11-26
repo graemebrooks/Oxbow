@@ -14,11 +14,11 @@ a {
 }
 
 .bg-red {
-	background-color: black;
+	background-color: rgb(0, 0, 0);
 }
 
 #footer {
-	background-color: black;
+	background-color: rgb(0, 0, 0);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -26,7 +26,7 @@ a {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	color: white;
+	color: rgb(255, 255, 255);
 }
 
 .main-container {
@@ -38,7 +38,7 @@ a {
 }
 
 #splash-container {
-	height: 84vh;
+	height: 85vh;
 	display: grid;
 	grid-template-columns: 3fr 4fr;
 }
@@ -52,15 +52,56 @@ a {
 }
 
 #splash-signup {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: center;
-	height: 70%;
-	width: 70%;
-	background-color: rgb(255, 24, 24);
+	display: grid;
+	grid-template-rows: 2fr 3fr 1fr;
+	height: 80%;
+	width: 80%;
+	background-image: url('https://www.sartle.com/media/artwork/drowning-girl-roy-lichtenstein.jpg?colorbox_zoom&itok=5fD-iBgk');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
 	color: white;
+	border: solid 8px black;
 }
+
+#signup-header {
+	background-color: black;
+	color: white;
+	font-weight: 700;
+	margin: 25px;
+	padding: 7px;
+}
+
+#signup-body {
+	font-family: 'Lato', sans-serif;
+	font-size: 1.3rem;
+	background-color: black;
+	color: white;
+	margin: 25px;
+	padding: 7px;
+}
+
+#signup-btn {
+	font-family: 'Lato', sans-serif;
+	color: white;
+	margin: 25px;
+}
+
 #splash-display-container {
 	background-color: rgb(255, 255, 255);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#splash-display-bg {
+	width: 700px;
+}
+
+#splash-signup .btn {
+	background-color: rgb(255, 0, 0);
+}
+
+#splash-signup .btn:hover {
+	background-color: rgb(255, 217, 0);
 }
