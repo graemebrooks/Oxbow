@@ -1,11 +1,20 @@
 <%- include('./partials/header') %>
-<div id="discover-info">
-
-</div>
-<div id="discover-art">
-    <img src="<%= objectBody.primaryImageSmall %>" alt="">
-</div>
-<div id="discover-next">
-
+<div id="discover-body">
+    <div id="discover-info">
+        <div id="discover-info-card">
+            <h1><%= objectBody.title %></h1>
+            <p><%= objectBody.artistDisplayName %></p>
+            <p><%= objectBody.objectEndDate %></p>
+            <p><%= objectBody.culture %></p>
+        </div>
+        <div id="discover-buttons">
+                <form action="/discover" method="GET" id="next-art">
+                    <button class="btn rounded-0">Next</button>
+                </form>
+            </div>
+    </div>
+    <div id="discover-art">
+        <img src="<%= objectBody.primaryImageSmall %>" alt="artwork" id="discover-art-image">
+    </div>
 </div>
 <%- include('./partials/footer') %>

@@ -18,7 +18,8 @@ function about(req, res) {
 
 function discover(req, res) {
 	let options = {
-		url: `https://collectionapi.metmuseum.org/public/collection/v1/search?dateBegin=1900&dateEnd=2000&objectName=Painting&hasImages=true&q=a`,
+		url: `https://collectionapi.metmuseum.org/public/collection/v1/search?departmentId=11&q=*
+        `,
 		headers: {
 			'User-Agent': 'kelsobrooks'
 		}
