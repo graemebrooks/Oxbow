@@ -11,9 +11,11 @@
                 <form action="/discover" method="GET">
                     <button class="btn rounded-0" id="next-art-btn">Next</button>
                 </form>
+                <% if (user) {%>
                 <form action="/critiques/<%= objectBody.objectID %>/new" method="GET">
                     <button class="btn rounded-0" id="critique-art-btn">Critique</button>
                 </form>
+                <% } %>
             </div>
     </div>
     <div id="discover-art">

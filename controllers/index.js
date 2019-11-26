@@ -1,4 +1,5 @@
 const request = require('request');
+const User = require('../models/user');
 
 const ROOT_URL = 'https://collectionapi.metmuseum.org/public/collection/v1/objects/';
 
@@ -8,12 +9,18 @@ module.exports = {
 	discover
 };
 
-function index(req, res) {
-	res.render('index');
+function index(req, res, next) {
+	res.render('index', {
+		user: req.user,
+		name: req.query.name
+	});
 }
 
 function about(req, res) {
-	res.render('about');
+	res.render('about', {
+		user: req.user,
+		name: req.query.name
+	});
 }
 
 function discover(req, res) {
@@ -40,7 +47,11 @@ function discover(req, res) {
 				// console.log(`${ROOT_URL}${art.objectIDs[Math.floor(Math.random() * art.total)]}`);
 				artObj = JSON.parse(objectBody);
 				// console.log(artObj.primaryImage);
-				res.render('discover', { objectBody: artObj });
+				res.render('discover', {
+					objectBody: artObj,
+					user: req.user,
+					name: req.query.name
+				});
 			}
 		);
 	});

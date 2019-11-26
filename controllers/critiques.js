@@ -10,6 +10,10 @@ function newCritique(req, res, next) {
 	artId = req.params.id;
 	request(`${ROOT_URL}${artId}`, function(err, response, body) {
 		artObj = JSON.parse(body);
-		res.render('critiques/new', { objectBody: artObj });
+		res.render('critiques/new', {
+			objectBody: artObj,
+			user: req.user,
+			name: req.query.name
+		});
 	});
 }
