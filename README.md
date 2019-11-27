@@ -35,3 +35,4 @@ Oxbow is an application for aspiring art critics. Using a large collection of cl
 ## Asset Credits
 
 - [Metropolitan Museum of Art API](https://metmuseum.github.io/)
+- [404 page art](https://dribbble.com/shots/6238965-Vincent-van-Gogh#shot-description) by Sakshi Singh

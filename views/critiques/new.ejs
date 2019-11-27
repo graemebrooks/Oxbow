@@ -1,4 +1,18 @@
 <%- include('../partials/header') %>
-    <h1>New Critique</h1>
-    <img src="<%= objectBody.primaryImageSmall %>" alt="">
+<div id="new-critique-container">
+    <div>
+        <div id="critique-form-card">
+            <h1>New Critique</h1>
+            <form action="">
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Critique Body</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>
+        <img src="<%= objectBody.primaryImageSmall %>" alt="">
+    </div>
+</div>
 <%- include('../partials/footer') %>
