@@ -161,7 +161,8 @@ a {
 	align-items: center;
 }
 
-#discover-info-card {
+#discover-info-card,
+#critique-info-card {
 	padding: 10px;
 	margin-top: 20px;
 	width: 90%;
@@ -173,10 +174,6 @@ a {
 	display: flex;
 	justify-content: flex-start;
 	width: 90%;
-}
-
-#critique-art-btn {
-	background-color: teal;
 }
 
 #next-art {
@@ -197,10 +194,41 @@ a {
 	grid-template-columns: 1fr 1fr;
 }
 
+#critique-form-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 #critique-form-card {
 	display: flex;
-	background-color: thistle;
+	flex-direction: column;
+	background-color: rgb(241, 241, 241);
 	width: 90%;
+	padding: 15px;
+	margin-bottom: 0px;
+}
+
+#critique-form-card * {
+	padding-bottom: 5px;
+	margin-bottom: 0px;
+}
+
+#critique-info-card {
+	margin-bottom: 10px;
+}
+
+#critique-art-container {
+	display: flex;
+	margin-top: 20px;
+}
+
+#critique-submit-btn {
+	margin-top: 10px;
+	background-color: rgb(0, 119, 255);
+	color: white;
+	font-family: 'Lato', sans-serif;
 }
 
 #footer-logo {

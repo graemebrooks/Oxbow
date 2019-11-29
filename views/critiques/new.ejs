@@ -1,17 +1,31 @@
 <%- include('../partials/header') %>
 <div id="new-critique-container">
-    <div>
+    <div id="critique-form-container">
+        <div id="critique-info-card">
+                <h3><%= objectBody.title %></h3>
+                <p><%= objectBody.artistDisplayName %>, <%= objectBody.objectEndDate %></p>
+        </div>
         <div id="critique-form-card">
-            <h1>New Critique</h1>
-            <form action="">
+            <form action="/critiques" method="POST">
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Critique Body</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                    <div class="">
+                        <input type="text" class="form-control" id="critiqueTitle" placeholder="Title">
+                    </div>
+                    <textarea class="form-control" id="critiqueBody" placeholder="Critique body" rows="5"></textarea>
                 </div>
+                <label for="critiqueRating">Rating</label>
+                <select class="form-control" id="critiqueRating">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+                <button type="submit" class="btn rounded-0" id="critique-submit-btn">Submit</button>
             </form>
         </div>
     </div>
-    <div>
+    <div id="critique-art-container">
         <img src="<%= objectBody.primaryImageSmall %>" alt="">
     </div>
 </div>
