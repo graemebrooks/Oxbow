@@ -9,18 +9,19 @@
             <form action="/critiques" method="POST">
                 <div class="form-group">
                     <div class="">
-                        <input type="text" class="form-control" id="critiqueTitle" placeholder="Title">
+                        <input type="text" name="title" class="form-control" id="critiqueTitle" placeholder="Title">
                     </div>
-                    <textarea class="form-control" id="critiqueBody" placeholder="Critique body" rows="5"></textarea>
+                    <textarea class="form-control" name="critiqueBody" id="critiqueBody" placeholder="Critique body" rows="5"></textarea>
                 </div>
                 <label for="critiqueRating">Rating</label>
-                <select class="form-control" id="critiqueRating">
+                <select class="form-control" name="rating" id="critiqueRating">
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
                   <option>4</option>
                   <option>5</option>
                 </select>
+                <input id="artworkState" name="artId" type="hidden" value="<%= objectBody.objectID %>">
                 <button type="submit" class="btn rounded-0" id="critique-submit-btn">Submit</button>
             </form>
         </div>
