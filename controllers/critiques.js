@@ -6,7 +6,8 @@ const ROOT_URL = 'https://collectionapi.metmuseum.org/public/collection/v1/objec
 
 module.exports = {
 	new: newCritique,
-	create
+	create,
+	show
 };
 
 function newCritique(req, res, next) {
@@ -38,17 +39,19 @@ function create(req, res) {
 		});
 		User.findById(req.user._id, function(err, user) {
 			user.critiques.push(newCritique);
-			console.log(user);
+		});
+		res.render('critiques/show', {
+			artObj,
+			user: req.user,
+			name: req.query.name
 		});
 	});
-	res.redirect('/');
 }
 
-// function create(req, res) {
-// 	Movie.findById(req.params.id, function(err, movie) {
-// 		movie.reviews.push(req.body);
-// 		movie.save(function(err) {
-// 			res.redirect(`/movies/${movie._id}`);
-// 		});
-// 	});
-// }
+function show(req, res) {
+	console.log('showing');
+	res.render('critiques/show', {
+		user: req.user,
+		name: req.query.name
+	});
+}

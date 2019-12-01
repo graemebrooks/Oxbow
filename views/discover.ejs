@@ -11,7 +11,7 @@
                     <button class="btn rounded-0" id="next-art-btn">Next</button>
                 </form>
                 <% if (user) {%>
-                <form action="/critiques/<%= objectBody.objectID %>/new" method="GET">
+                <form action="/critiques/new/<%= objectBody.objectID %>" method="GET">
                     <button class="btn rounded-0" id="critique-art-btn">Critique This</button>
                 </form>
                 <% } %>
