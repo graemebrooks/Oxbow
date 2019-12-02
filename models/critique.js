@@ -6,6 +6,9 @@ const critiqueSchema = new Schema(
 		critic: {
 			type: String
 		},
+		criticId: {
+			type: String
+		},
 		publishDate: {
 			type: Date
 		},

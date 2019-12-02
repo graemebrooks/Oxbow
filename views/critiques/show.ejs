@@ -9,12 +9,14 @@
             <div class="critiqueContentContainer">
                 <h1><%= critique.critiqueTitle %></h1>
                 <p class="date"><%= critique.publishDate %></p>
+                <% if (user._id == critique.criticId) {%>
                 <form action="/critiques/edit/<%= critique._id %>" method="GET" id="update-critique">
                     <button type="submit" form="update-critique" class="btn btn-outline-primary">Update</button>
                 </form>
                 <form action="/critiques/<%= critique._id %>?_method=DELETE" method="POST" id="delete-critique">
                     <button type="submit" form="delete-critique" class="btn btn-outline-danger">Delete</button>
                 </form>
+                <% } %>
                 <hr>
                 <p><%= critique.critiqueBody %></p>
             </div>

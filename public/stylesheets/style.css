@@ -251,7 +251,20 @@ a {
 }
 
 .newCommentField {
-	width: 60%;
+	width: 70%;
+	padding: 0.5rem;
+	background-color: rgb(221, 221, 221);
+}
+
+.critiqueContentContainer {
+	width: 100%;
+	margin: 1.5rem;
+}
+
+#comment-submit-btn {
+	background-color: rgb(0, 119, 255);
+	color: white;
+	font-family: 'Lato', sans-serif;
 }
 
 .date {

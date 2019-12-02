@@ -32,6 +32,7 @@ function create(req, res) {
 		artObj = JSON.parse(body);
 		newCritique = new Critique({
 			critic: req.user.name,
+			criticId: req.user._id,
 			publishDate: new Date(),
 			artworkImage: artObj.primaryImageSmall,
 			artistName: artObj.artistDisplayName,
