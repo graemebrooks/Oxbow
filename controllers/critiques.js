@@ -1,6 +1,7 @@
 const request = require('request');
 const Critique = require('../models/critique');
 const User = require('../models/user');
+const Comment = require('../models/comment');
 
 const ROOT_URL = 'https://collectionapi.metmuseum.org/public/collection/v1/objects/';
 
@@ -10,7 +11,8 @@ module.exports = {
 	show,
 	delete: deleteCritique,
 	update,
-	updateForm
+	updateForm,
+	createComment
 };
 
 function newCritique(req, res, next) {
@@ -54,14 +56,13 @@ function create(req, res) {
 
 function show(req, res) {
 	id = req.params.id;
-	console.log(`showing...${id}`);
-	Critique.findById(id, function(err, critique) {
-		console.log(`critique: ${critique}`);
-		console.log(`user: ${req.user}`);
+	Critique.findById(id).populate('comments').exec(function(err, critique) {
+		console.log(`THESE ARE THE COMMENTS: ${critique.comments}`);
 		res.render('critiques/show', {
 			user: req.user,
 			name: req.query.name,
-			critique: critique
+			critique: critique,
+			comments: critique.comments
 		});
 	});
 }
@@ -95,6 +96,27 @@ function updateForm(req, res) {
 			user: req.user,
 			name: req.query.name,
 			critique: critique
+		});
+	});
+}
+
+function createComment(req, res) {
+	console.log(`commenting...`);
+	newComment = new Comment({
+		commenter: req.user.name,
+		commentBody: req.body.commentBody,
+		commentDate: new Date()
+	});
+	console.log(`new comment: ${newComment}`);
+	newComment.save(function(err, comment) {
+		console.log(comment);
+	});
+	Critique.findById(req.params.id, function(err, critique) {
+		console.log(`before comment: ${critique}`);
+		critique.comments.push(newComment._id);
+		critique.save(function(err, crit) {
+			console.log(crit);
+			res.redirect(`/critiques/${req.params.id}`);
 		});
 	});
 }

@@ -8,20 +8,29 @@
             </div>
             <div class="critiqueContentContainer">
                 <h1><%= critique.critiqueTitle %></h1>
-                <p><%= critique.publishDate %></p>
+                <p class="date"><%= critique.publishDate %></p>
                 <form action="/critiques/edit/<%= critique._id %>" method="GET" id="update-critique">
                     <button type="submit" form="update-critique" class="btn btn-outline-primary">Update</button>
                 </form>
                 <form action="/critiques/<%= critique._id %>?_method=DELETE" method="POST" id="delete-critique">
                     <button type="submit" form="delete-critique" class="btn btn-outline-danger">Delete</button>
                 </form>
+                <hr>
                 <p><%= critique.critiqueBody %></p>
             </div>
             <div class="newCommentField">
-            
+                <form action="/critiques/<%= critique._id %>/comments" method="POST" id="comment-field">
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Comment</label>
+                        <textarea name="commentBody" class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+                    </div>
+                    <button type="submit" form="comment-field" class="btn rounded-0" id="comment-submit-btn">Submit</button>
+                </form>
             </div>
             <div class="commentsContainer">
-            
+                <% comments.forEach(function(comment) { %>
+                    <p><%= comment.commentBody %></p>
+                <% }) %>
             </div>
         </div>
 </section>

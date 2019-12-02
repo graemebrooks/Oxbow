@@ -9,4 +9,6 @@ router.post('/', critiqueCtrl.create);
 router.put('/:id', critiqueCtrl.update);
 router.delete('/:id', critiqueCtrl.delete);
 
+router.post('/:id/comments', critiqueCtrl.createComment);
+
 module.exports = router;

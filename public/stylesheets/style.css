@@ -242,13 +242,21 @@ a {
 	flex-direction: column;
 	align-items: center;
 	width: 60%;
-	background-color: greenyellow;
 	margin-top: 2rem;
 }
 
 .critiqueArtContainer {
 	padding: 15px;
 	background-color: rgb(255, 217, 0);
+}
+
+.newCommentField {
+	width: 60%;
+}
+
+.date {
+	color: red;
+	font-family: 'Lato', sans-serif;
 }
 
 #footer-logo {
