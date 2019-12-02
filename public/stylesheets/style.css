@@ -189,7 +189,7 @@ a {
 	color: white;
 }
 
-#new-critique-container {
+.new-critique-container {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
@@ -231,13 +231,13 @@ a {
 	font-family: 'Lato', sans-serif;
 }
 
-#critiqueShowSection {
+.critiqueShowSection {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-#critiqueContainer {
+.critiqueContainer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -246,7 +246,7 @@ a {
 	margin-top: 2rem;
 }
 
-#critiqueArtContainer {
+.critiqueArtContainer {
 	padding: 15px;
 	background-color: rgb(255, 217, 0);
 }

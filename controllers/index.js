@@ -1,5 +1,6 @@
 const request = require('request');
 const User = require('../models/user');
+const Critique = require('../models/critique');
 
 const ROOT_URL = 'https://collectionapi.metmuseum.org/public/collection/v1/objects/';
 
@@ -56,8 +57,12 @@ function discover(req, res) {
 
 function gallery(req, res) {
 	console.log(req.user.critiques);
-	res.render('gallery', {
-		user: req.user,
-		name: req.query.name
+	User.findById(req.user._id).populate('critiques').exec(function(err, user) {
+		console.log(`THIS IS GALLERY USER ${user.critiques}`);
+		res.render('gallery', {
+			user: req.user,
+			name: req.query.name,
+			critiques: user.critiques
+		});
 	});
 }

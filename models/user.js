@@ -12,7 +12,12 @@ const userSchema = new Schema(
 		email: {
 			type: String
 		},
-		critiques: [ { type: Object } ]
+		critiques: [
+			{
+				type: Schema.Types.ObjectId,
+				ref: 'Critique'
+			}
+		]
 	},
 	{ timestamps: true }
 );

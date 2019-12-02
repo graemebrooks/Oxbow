@@ -7,7 +7,10 @@ const ROOT_URL = 'https://collectionapi.metmuseum.org/public/collection/v1/objec
 module.exports = {
 	new: newCritique,
 	create,
-	show
+	show,
+	delete: deleteCritique,
+	update,
+	updateForm
 };
 
 function newCritique(req, res, next) {
@@ -23,10 +26,8 @@ function newCritique(req, res, next) {
 }
 
 function create(req, res) {
-	console.log(req.body.artId);
 	request(`${ROOT_URL}${req.body.artId}`, function(err, response, body) {
 		artObj = JSON.parse(body);
-		console.log(`${new Date()}`);
 		newCritique = new Critique({
 			critic: req.user.name,
 			publishDate: new Date(),
@@ -39,13 +40,13 @@ function create(req, res) {
 			critiqueRating: req.body.rating
 		});
 		User.findById(req.user._id, function(err, user) {
-			user.critiques.push(newCritique);
+			user.critiques.push(newCritique._id);
 			user.save(function(err, user) {
-				console.log(`user saved`);
+				console.log(`user saved new critique: ${newCritique._id}`);
+				res.redirect(`/critiques/${newCritique._id}`);
 			});
 			newCritique.save(function(err, crit) {
 				console.log(`critique saved`);
-				res.redirect(`/critiques/${newCritique._id}`);
 			});
 		});
 	});
@@ -53,8 +54,44 @@ function create(req, res) {
 
 function show(req, res) {
 	id = req.params.id;
+	console.log(`showing...${id}`);
 	Critique.findById(id, function(err, critique) {
+		console.log(`critique: ${critique}`);
+		console.log(`user: ${req.user}`);
 		res.render('critiques/show', {
+			user: req.user,
+			name: req.query.name,
+			critique: critique
+		});
+	});
+}
+
+function deleteCritique(req, res) {
+	User.findById(req.user._id, function(err, user) {
+		deletedCrit = user.critiques.indexOf(req.params.id);
+		console.log(`crit id to be deleted: ${deletedCrit}`);
+		user.critiques.splice(deletedCrit, 1);
+		user.save(function(err, user) {
+			console.log(user);
+		});
+	});
+	Critique.findByIdAndDelete(req.params.id, function(err, crit) {
+		console.log(`deleted crit: ${crit}`);
+		res.redirect('/gallery');
+	});
+}
+
+function update(req, res) {
+	console.log(`updating`);
+	Critique.findByIdAndUpdate(req.params.id, req.body, function(err, crit) {
+		console.log(crit);
+		res.redirect('/gallery');
+	});
+}
+
+function updateForm(req, res) {
+	Critique.findById(req.params.id, function(err, critique) {
+		res.render('critiques/update', {
 			user: req.user,
 			name: req.query.name,
 			critique: critique
