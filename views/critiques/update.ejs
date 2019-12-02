@@ -6,26 +6,23 @@
                 <p><%= critique.artistName %>, <%= critique.artworkPublishDate %></p>
         </div>
         <div id="critique-form-card">
-            <form action="/critiques" method="POST">
-                <div class="form-group">
-                    <div class="">
-                        <input type="text" name="critiqueTitle" class="form-control" id="critiqueTitle" value="<%= critique.critiqueTitle %>">
-                    </div>
-                    <textarea class="form-control" name="critiqueBody" id="critiqueBody" rows="5"><%= critique.critiqueBody %></textarea>
-                </div>
-                <label for="critiqueRating">Rating</label>
-                <select class="form-control" name="critiqueRating" id="critiqueRating">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
                 <form action="/critiques/<%= critique._id %>?_method=PUT" method="POST" id="update-critique">
+                    <div class="form-group">
+                            <div class="">
+                                <input type="text" name="critiqueTitle" class="form-control" id="critiqueTitle" value="<%= critique.critiqueTitle %>">
+                            </div>
+                            <textarea class="form-control" name="critiqueBody" id="critiqueBody" rows="5"><%= critique.critiqueBody %></textarea>
+                        </div>
+                        <label for="critiqueRating">Rating</label>
+                        <select class="form-control" name="critiqueRating" id="critiqueRating">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                        </select>
                     <button type="submit" form="update-critique" class="btn btn-outline-primary">Update</button>
                 </form>
-                <!-- <button type="submit" class="btn rounded-0" id="critique-submit-btn">Update</button> -->
-            </form>
         </div>
     </div>
     <div id="critique-art-container">
