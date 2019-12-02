@@ -1,0 +1,20 @@
+<%- include('./partials/header') %>
+
+<h1>Hola Gallery</h1>
+
+<% user.critiques.forEach(function(crit) { %>
+
+    <div class="card" style="width: 18rem;">
+            <img src="<%=crit.artworkImage%>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><%= crit.artworkTitle %></h5>
+              <h5 class="card-title"><%= crit.critiqueTitle %></h5>
+              <a href="/critiques/<%= crit._id %>" class="btn btn-primary">See More</a>
+            </div>
+    </div>
+
+<%  }) %>
+
+ 
+
+<%- include('./partials/footer') %>

@@ -1,4 +1,24 @@
 <%- include('../partials/header') %>
-    <h1>Hola soy Show</h1>
-    <p><%= artObj.title %></p>
+<section id="critiqueShowSection">
+    <div id="critiqueContainer">
+            <div id="critiqueArtContainer">
+                <img src="<%= artObj.primaryImageSmall %>" alt="">
+                <p><%= artObj.title %></p>
+                <p><%= artObj.artistDisplayName %>, <%= artObj.objectEndDate %></p>
+            </div>
+            <div id="critiqueContentContainer">
+                <h1><%= critique.critiqueTitle %></h1>
+                <p><%= critique.publishDate %></p>
+                <button type="button" class="btn btn-outline-primary">Update</button>
+                <button type="button" class="btn btn-outline-danger">Delete</button>
+                <p><%= critique.critiqueBody %></p>
+            </div>
+            <div id="newCommentField">
+            
+            </div>
+            <div id="commentsContainer">
+            
+            </div>
+        </div>
+</section>
 <%- include('../partials/footer') %>

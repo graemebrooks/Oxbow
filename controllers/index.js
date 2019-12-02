@@ -18,7 +18,8 @@ request('https://collectionapi.metmuseum.org/public/collection/v1/search?departm
 module.exports = {
 	index,
 	about,
-	discover
+	discover,
+	gallery
 };
 
 function index(req, res, next) {
@@ -51,4 +52,12 @@ function discover(req, res) {
 			});
 		}
 	);
+}
+
+function gallery(req, res) {
+	console.log(req.user.critiques);
+	res.render('gallery', {
+		user: req.user,
+		name: req.query.name
+	});
 }

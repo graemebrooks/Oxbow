@@ -26,7 +26,7 @@ function create(req, res) {
 	console.log(req.body.artId);
 	request(`${ROOT_URL}${req.body.artId}`, function(err, response, body) {
 		artObj = JSON.parse(body);
-		console.log(`This is the art url: ${artObj.primaryImageSmall}`);
+		console.log(`${new Date()}`);
 		newCritique = new Critique({
 			critic: req.user.name,
 			publishDate: new Date(),
@@ -34,24 +34,30 @@ function create(req, res) {
 			artistName: artObj.artistDisplayName,
 			artworkPublishDate: artObj.objectEndDate,
 			artworkTitle: artObj.title,
+			critiqueTitle: req.body.title,
 			critiqueBody: req.body.critiqueBody,
 			critiqueRating: req.body.rating
 		});
 		User.findById(req.user._id, function(err, user) {
 			user.critiques.push(newCritique);
-		});
-		res.render('critiques/show', {
-			artObj,
-			user: req.user,
-			name: req.query.name
+			user.save(function(err, user) {
+				console.log(`user saved`);
+			});
+			newCritique.save(function(err, crit) {
+				console.log(`critique saved`);
+				res.redirect(`/critiques/${newCritique._id}`);
+			});
 		});
 	});
 }
 
 function show(req, res) {
-	console.log('showing');
-	res.render('critiques/show', {
-		user: req.user,
-		name: req.query.name
+	id = req.params.id;
+	Critique.findById(id, function(err, critique) {
+		res.render('critiques/show', {
+			user: req.user,
+			name: req.query.name,
+			critique: critique
+		});
 	});
 }

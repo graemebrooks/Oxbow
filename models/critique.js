@@ -21,6 +21,9 @@ const critiqueSchema = new Schema(
 		artworkTitle: {
 			type: String
 		},
+		critiqueTitle: {
+			type: String
+		},
 		critiqueBody: {
 			type: String
 		},

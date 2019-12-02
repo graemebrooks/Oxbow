@@ -231,6 +231,26 @@ a {
 	font-family: 'Lato', sans-serif;
 }
 
+#critiqueShowSection {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#critiqueContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 60%;
+	background-color: greenyellow;
+	margin-top: 2rem;
+}
+
+#critiqueArtContainer {
+	padding: 15px;
+	background-color: rgb(255, 217, 0);
+}
+
 #footer-logo {
 	height: 30px;
 }
