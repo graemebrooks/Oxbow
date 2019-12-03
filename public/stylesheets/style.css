@@ -107,7 +107,8 @@ a {
 }
 
 #splash-signup .btn:hover,
-#discover-buttons .btn:hover {
+#discover-buttons .btn:hover,
+.gallery-card .btn:hover {
 	background-color: rgb(255, 217, 0);
 }
 
@@ -245,10 +246,26 @@ a {
 	margin-top: 2rem;
 }
 
-.critique-options {
-	background-color: red;
+.critique-options-btn {
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+	border: none;
 	padding: .1rem;
 	height: 1.5rem;
+}
+
+#critique-options-span {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+#critique-options-span * {
+	margin-right: 1rem;
+	padding: 0.05rem;
+}
+
+.link {
+	border: none;
 }
 
 .critiqueArtContainer {
@@ -257,11 +274,11 @@ a {
 }
 
 .newCommentField {
-	width: 70%;
+	width: 100%;
 	padding: 0.5rem;
+	margin-bottom: 1rem;
 	background-color: rgb(0, 0, 0);
 	color: white;
-	margin: 1rem;
 }
 
 #comments-section {
@@ -276,8 +293,15 @@ a {
 }
 
 .comment-header * {
+	display: inline-block;
+	justify-content: space-between;
 	margin: 0;
 	padding: 0;
+}
+
+.comment-header .btn {
+	border: none;
+	width: 1.75rem;
 }
 
 .commenter-name {
@@ -344,6 +368,29 @@ a {
 .date {
 	color: red;
 	font-family: 'Lato', sans-serif;
+}
+
+#about-content {
+	width: 70%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: auto;
+}
+
+#about-content * {
+	background-color: rgb(0, 0, 0);
+	color: white;
+	padding: 1rem;
+	margin: 1rem;
+}
+
+#about-body {
+	background-image: url('https://www.metmuseum.org/toah/images/hb/hb_08.228.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 100vh;
 }
 
 #footer-logo {
