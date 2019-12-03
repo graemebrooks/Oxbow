@@ -42,9 +42,18 @@
                         <div class="commentsContainer">
                             <% comments.forEach(function(comment) { %>
                                 <div class="comment">
-                                    <p><%= comment.commenterName %></p>
-                                    <p><%= comment.commentDate %></p>
-                                    <p><%= comment.commentBody %></p>
+                                    <div class="comment-header">
+                                        <p class="commenter-name"><%= comment.commenterName %></p>
+                                        <p class="comment-date"><%= comment.commentDate %></p>
+                                    </div>
+                                    <div class="comment-body">
+                                        <p><%= comment.commentBody %></p>
+                                    </div>
+                                    <% if (user._id == comment.commenterId ) { %>
+                                    <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                                        <button type="submit" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i></button>
+                                    </form>
+                                    <% } %>
                                 </div>
                             <% }) %>
                         </div>

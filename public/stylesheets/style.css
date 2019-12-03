@@ -259,11 +259,39 @@ a {
 .newCommentField {
 	width: 70%;
 	padding: 0.5rem;
-	background-color: rgb(221, 221, 221);
+	background-color: rgb(0, 0, 0);
+	color: white;
+	margin: 1rem;
 }
 
 #comments-section {
 	width: 100%;
+}
+
+.comment {
+	background-color: rgb(221, 221, 221);
+	margin: .5rem 0rem;
+	padding: .5rem;
+	width: 100%;
+}
+
+.comment-header * {
+	margin: 0;
+	padding: 0;
+}
+
+.commenter-name {
+	color: rgb(65, 147, 255);
+}
+
+.comment-date {
+	font-size: .85rem;
+}
+
+.comment-body {
+	background-color: white;
+	margin-top: .5rem;
+	padding-left: .5rem;
 }
 
 .critiqueContentContainer {

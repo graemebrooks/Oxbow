@@ -17,6 +17,7 @@ require('./config/passport');
 
 const indexRouter = require('./routes/index');
 const critiquesRouter = require('./routes/critiques');
+const commentsRouter = require('./routes/comments');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -40,6 +41,7 @@ app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/critiques', critiquesRouter);
+app.use('/comments', commentsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
