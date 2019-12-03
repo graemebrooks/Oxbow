@@ -9,6 +9,12 @@
                     <div class="card-body">
                       <h5 class="card-title"><%= crit.artworkTitle %></h5>
                       <h5 class="card-author"><%= crit.critic %></h5>
+                      <span class="stars">
+                                <% for (let i = 0; i < crit.critiqueRating; i++) {%>
+                                <i class="fas fa-star"></i>
+                                <%}%>
+                        </span>
+                        <br>
                       <a href="/critiques/<%= crit._id %>" id="see-more-btn" class="btn btn-primary rounded-0">See More</a>
                     </div>
             </div>

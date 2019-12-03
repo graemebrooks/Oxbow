@@ -344,10 +344,16 @@ a {
 	background-position: center center;
 }
 
+.stars {
+	color: rgb(255, 217, 0);
+	margin-bottom: 1rem;
+}
+
 .card-title {
 	color: rgb(0, 0, 0);
 	background-color: rgb(255, 217, 0);
 	padding: 0.25rem;
+	margin: 0;
 }
 
 #see-more-btn {
@@ -363,6 +369,7 @@ a {
 .card-author {
 	color: white;
 	font-size: 1rem;
+	margin: 0;
 }
 
 .date {
