@@ -245,6 +245,12 @@ a {
 	margin-top: 2rem;
 }
 
+.critique-options {
+	background-color: red;
+	padding: .1rem;
+	height: 1.5rem;
+}
+
 .critiqueArtContainer {
 	padding: 15px;
 	background-color: rgb(255, 217, 0);
@@ -269,7 +275,6 @@ a {
 
 #gallery-container {
 	display: flex;
-	justify-content: space-around;
 	flex-direction: row;
 	flex-wrap: wrap;
 }

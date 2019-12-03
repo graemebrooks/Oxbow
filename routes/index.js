@@ -7,6 +7,8 @@ router.get('/', indexCtrl.index);
 
 router.get('/gallery', indexCtrl.gallery);
 
+router.get('/discourse', indexCtrl.discourse);
+
 router.get('/discover', indexCtrl.discover);
 
 router.get('/about', indexCtrl.about);

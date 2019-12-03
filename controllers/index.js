@@ -20,7 +20,8 @@ module.exports = {
 	index,
 	about,
 	discover,
-	gallery
+	gallery,
+	discourse
 };
 
 function index(req, res, next) {
@@ -63,6 +64,17 @@ function gallery(req, res) {
 			user: req.user,
 			name: req.query.name,
 			critiques: user.critiques
+		});
+	});
+}
+
+function discourse(req, res) {
+	console.log(req.user.critiques);
+	Critique.find({}, function(err, critiques) {
+		res.render('discourse', {
+			user: req.user,
+			name: req.query.name,
+			critiques
 		});
 	});
 }

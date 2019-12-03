@@ -8,15 +8,24 @@
             </div>
             <div class="critiqueContentContainer">
                 <h1><%= critique.critiqueTitle %></h1>
-                <p class="date"><%= critique.publishDate %></p>
-                <% if (user._id == critique.criticId) {%>
-                <form action="/critiques/edit/<%= critique._id %>" method="GET" id="update-critique">
-                    <button type="submit" form="update-critique" class="btn btn-outline-primary">Update</button>
-                </form>
-                <form action="/critiques/<%= critique._id %>?_method=DELETE" method="POST" id="delete-critique">
-                    <button type="submit" form="delete-critique" class="btn btn-outline-danger">Delete</button>
-                </form>
-                <% } %>
+                <span style="display: inline-flex;">
+                    <p class="date"><%= critique.publishDate %></p>
+                    <% if (user._id == critique.criticId) {%>
+                    <div class="btn-group">
+                            <button class="btn btn-secondary btn-sm dropdown-toggle critique-options rounded-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                        <form action="/critiques/edit/<%= critique._id %>" method="GET" id="update-critique">
+                                            <button type="submit" form="update-critique" class="btn btn-outline-primary">Update</button>
+                                        </form>
+                                        <form action="/critiques/<%= critique._id %>?_method=DELETE" method="POST" id="delete-critique">
+                                            <button type="submit" form="delete-critique" class="btn btn-outline-danger">Delete</button>
+                                        </form>
+                            </div>
+                          </div>
+                          <% } %>
+                </span>
                 <hr>
                 <p><%= critique.critiqueBody %></p>
             </div>
