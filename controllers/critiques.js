@@ -104,7 +104,8 @@ function updateForm(req, res) {
 function createComment(req, res) {
 	console.log(`commenting...`);
 	newComment = new Comment({
-		commenter: req.user.name,
+		commenterName: req.user.name,
+		commenterId: req.user._id,
 		commentBody: req.body.commentBody,
 		commentDate: new Date()
 	});

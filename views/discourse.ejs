@@ -1,6 +1,6 @@
 <%- include('./partials/header') %>
 
-<h1 id="gallery-title">My Gallery</h1>
+<h1 class="title">Discourse</h1>
 
 <div id="gallery-container">
         <% critiques.forEach(function(crit) { %>
@@ -8,6 +8,7 @@
             <div class="card gallery-card" style="background-image: url('<%=crit.artworkImage%>');">
                     <div class="card-body">
                       <h5 class="card-title"><%= crit.artworkTitle %></h5>
+                      <h5 class="card-author"><%= crit.critic %></h5>
                       <a href="/critiques/<%= crit._id %>" id="see-more-btn" class="btn btn-primary rounded-0">See More</a>
                       <a href="/critiques/<%= crit._id %>" id="" class="btn btn-danger rounded-0"><i class="fas fa-trash-alt"></i></a>
                     </div>

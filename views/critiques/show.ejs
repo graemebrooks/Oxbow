@@ -29,20 +29,26 @@
                 <hr>
                 <p><%= critique.critiqueBody %></p>
             </div>
-            <div class="newCommentField">
-                <form action="/critiques/<%= critique._id %>/comments" method="POST" id="comment-field">
-                    <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Comment</label>
-                        <textarea name="commentBody" class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+            <section id="comments-section">
+                    <div class="newCommentField">
+                            <form action="/critiques/<%= critique._id %>/comments" method="POST" id="comment-field">
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Comment</label>
+                                    <textarea name="commentBody" class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+                                </div>
+                                <button type="submit" form="comment-field" class="btn rounded-0" id="comment-submit-btn">Submit</button>
+                            </form>
+                        </div>
+                        <div class="commentsContainer">
+                            <% comments.forEach(function(comment) { %>
+                                <div class="comment">
+                                    <p><%= comment.commenterName %></p>
+                                    <p><%= comment.commentDate %></p>
+                                    <p><%= comment.commentBody %></p>
+                                </div>
+                            <% }) %>
+                        </div>
                     </div>
-                    <button type="submit" form="comment-field" class="btn rounded-0" id="comment-submit-btn">Submit</button>
-                </form>
-            </div>
-            <div class="commentsContainer">
-                <% comments.forEach(function(comment) { %>
-                    <p><%= comment.commentBody %></p>
-                <% }) %>
-            </div>
-        </div>
+            </section>
 </section>
 <%- include('../partials/footer') %>
