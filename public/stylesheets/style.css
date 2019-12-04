@@ -37,14 +37,6 @@ a {
 	padding-bottom: 60px;
 }
 
-#splash-signup-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	background-color: rgb(255, 255, 255);
-}
-
 #splash-signup {
 	display: grid;
 	grid-template-rows: 2fr 3fr 1fr;
@@ -391,10 +383,12 @@ a {
 /* Mobile Styles */
 @media only screen and (max-width: 400px) {
 	#splash-container {
-		height: 85vh;
+		height: 80%;
 		width: 100vw;
-		display: grid;
-		grid-template-rows: 1fr;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 1rem;
 	}
 
 	#splash-display-bg {
@@ -413,6 +407,13 @@ a {
 		grid-template-rows: 2fr 4fr;
 		height: 84vh;
 		background-color: rgb(255, 255, 255);
+	}
+	#discover-art {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 1rem;
+		padding: 1rem;
 	}
 	.new-critique-container {
 		display: grid;
@@ -442,8 +443,18 @@ a {
 	#splash-container {
 		height: 85vh;
 		width: 100vw;
-		display: grid;
-		grid-template-rows: 1fr;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#splash-signup-container {
+		display: flex;
+		max-height: 85vh;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: rgb(255, 255, 255);
 	}
 
 	#splash-display-bg {
@@ -470,6 +481,7 @@ a {
 		justify-content: center;
 		align-items: center;
 		margin-top: 1rem;
+		padding: 1rem;
 	}
 	.new-critique-container {
 		display: grid;
@@ -501,6 +513,14 @@ a {
 		height: 85vh;
 		display: grid;
 		grid-template-columns: 3fr 4fr;
+	}
+
+	#splash-signup-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: rgb(255, 255, 255);
 	}
 
 	#discover-body {
