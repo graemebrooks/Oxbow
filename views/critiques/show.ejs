@@ -5,6 +5,11 @@
                 <img src="<%= critique.artworkImage %>" alt="">
                 <p><%= critique.artworkTitle %></p>
                 <p><%= critique.artistName %>, <%= critique.artworkPublishDate %></p>
+                <span class="">
+                        <% for (let i = 0; i < critique.critiqueRating; i++) {%>
+                        <i class="fas fa-star"></i>
+                        <%}%>
+                </span>
             </div>
             <div class="critiqueContentContainer">
                 <h1><%= critique.critiqueTitle %></h1>

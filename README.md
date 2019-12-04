@@ -6,6 +6,9 @@ Oxbow is an application for aspiring art critics. Using a large collection of cl
 
 ## Views/Wireframes
 
+<img src="[drawing.jpg](https://i.imgur.com/0mDTrE1.png)" alt="drawing" width="200"/>
+
+
 ![Landing Page Wireframe](https://i.imgur.com/tyURba7.png)
 ![Discover Page Wireframe](https://i.imgur.com/OHw3da7.png)
 ![Critique Show Wireframe](https://i.imgur.com/W7j37Rz.png)
@@ -19,7 +22,7 @@ Oxbow is an application for aspiring art critics. Using a large collection of cl
 - AAU I want to be able to access and view a gallery of my art reviews.
 - AAU I want to be able to view recent reviews and comment on them.
 - AAU I want to be able to update and delete my reviews.
-- AAU I want to be able to update and delete my comments.
+- AAU I want to be able to delete my comments.
 
 ## Data Structure
 
