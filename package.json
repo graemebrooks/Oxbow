@@ -35,5 +35,8 @@
 	"bugs": {
 		"url": "https://github.com/graemebrooks/Oxbow/issues"
 	},
+	"engines": {
+		"node": "11.15.0"
+	},
 	"homepage": "https://github.com/graemebrooks/Oxbow#readme"
 }
