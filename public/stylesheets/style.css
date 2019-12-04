@@ -37,12 +37,6 @@ a {
 	padding-bottom: 60px;
 }
 
-#splash-container {
-	height: 85vh;
-	display: grid;
-	grid-template-columns: 3fr 4fr;
-}
-
 #splash-signup-container {
 	display: flex;
 	flex-direction: column;
@@ -138,13 +132,6 @@ a {
 	align-items: center;
 }
 
-#discover-body {
-	display: grid;
-	grid-template-columns: 2fr 4fr;
-	height: 84vh;
-	background-color: rgb(255, 255, 255);
-}
-
 #discover-art {
 	display: flex;
 	justify-content: center;
@@ -171,6 +158,10 @@ a {
 	background-color: rgb(255, 230, 0);
 }
 
+#update-btn {
+	margin-top: 1rem;
+}
+
 #discover-buttons {
 	display: flex;
 	justify-content: flex-start;
@@ -188,11 +179,6 @@ a {
 	background-repeat: no-repeat;
 	background-position: center center;
 	color: white;
-}
-
-.new-critique-container {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
 }
 
 #critique-form-container {
@@ -218,11 +204,6 @@ a {
 
 #critique-info-card {
 	margin-bottom: 10px;
-}
-
-#critique-art-container {
-	display: flex;
-	margin-top: 20px;
 }
 
 #critique-submit-btn {
@@ -266,11 +247,6 @@ a {
 
 .link {
 	border: none;
-}
-
-.critiqueArtContainer {
-	padding: 15px;
-	background-color: rgb(255, 217, 0);
 }
 
 .newCommentField {
@@ -329,7 +305,7 @@ a {
 	font-family: 'Lato', sans-serif;
 }
 
-#gallery-container {
+.gallery-container {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -392,6 +368,10 @@ a {
 	margin: 1rem;
 }
 
+.post {
+	white-space: pre;
+}
+
 #about-body {
 	background-image: url('https://www.metmuseum.org/toah/images/hb/hb_08.228.jpg');
 	background-size: cover;
@@ -407,3 +387,142 @@ a {
 #brand-logo {
 	height: 30px;
 }
+
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+	#splash-container {
+		height: 85vh;
+		width: 100vw;
+		display: grid;
+		grid-template-rows: 1fr;
+	}
+
+	#splash-display-bg {
+		width: 700px;
+		display: none;
+	}
+
+	.gallery-container {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	#discover-body {
+		display: grid;
+		grid-template-rows: 2fr 4fr;
+		height: 84vh;
+		background-color: rgb(255, 255, 255);
+	}
+	.new-critique-container {
+		display: grid;
+		grid-template-rows: 1fr 1fr;
+	}
+	.critique-art-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 1rem;
+	}
+	.critique-art-container img {
+		max-width: 95%;
+	}
+	.showArtContainer {
+		max-width: 90vw;
+		padding: 15px;
+		background-color: rgb(255, 217, 0);
+	}
+	.showArtContainer img {
+		max-width: 80vw;
+	}
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+	#splash-container {
+		height: 85vh;
+		width: 100vw;
+		display: grid;
+		grid-template-rows: 1fr;
+	}
+
+	#splash-display-bg {
+		width: 700px;
+		display: none;
+	}
+
+	.gallery-container {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	#discover-body {
+		display: grid;
+		grid-template-rows: 2fr 4fr;
+		height: 84vh;
+		background-color: rgb(255, 255, 255);
+	}
+
+	#discover-art {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 1rem;
+	}
+	.new-critique-container {
+		display: grid;
+		grid-template-rows: 1fr 1fr;
+	}
+
+	.critique-art-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 2rem 0 2rem 0;
+	}
+	.critique-art-container img {
+		max-width: 95%;
+	}
+	.showArtContainer {
+		max-width: 90vw;
+		padding: 15px;
+		background-color: rgb(255, 217, 0);
+	}
+	.showArtContainer img {
+		max-width: 80vw;
+	}
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+	#splash-container {
+		height: 85vh;
+		display: grid;
+		grid-template-columns: 3fr 4fr;
+	}
+
+	#discover-body {
+		display: grid;
+		grid-template-columns: 2fr 4fr;
+		height: 84vh;
+		background-color: rgb(255, 255, 255);
+	}
+
+	.new-critique-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.critique-art-container {
+		display: flex;
+		margin-top: 20px;
+	}
+	.showArtContainer {
+		padding: 15px;
+		background-color: rgb(255, 217, 0);
+	}
+}
+
+/*--------------------------------------------------------------*/

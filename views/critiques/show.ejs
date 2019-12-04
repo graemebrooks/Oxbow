@@ -1,11 +1,11 @@
 <%- include('../partials/header') %>
 <section class="critiqueShowSection">
     <div class="critiqueContainer">
-            <div class="critiqueArtContainer">
+            <div class="showArtContainer">
                 <img src="<%= critique.artworkImage %>" alt="">
                 <p><%= critique.artworkTitle %></p>
                 <p><%= critique.artistName %>, <%= critique.artworkPublishDate %></p>
-                <span class="">
+                <span class="show-stars">
                         <% for (let i = 0; i < critique.critiqueRating; i++) {%>
                         <i class="fas fa-star"></i>
                         <%}%>

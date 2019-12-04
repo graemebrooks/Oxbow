@@ -45,12 +45,9 @@ function create(req, res) {
 		User.findById(req.user._id, function(err, user) {
 			user.critiques.push(newCritique._id);
 			user.save(function(err, user) {
-				console.log(`user saved new critique: ${newCritique._id}`);
 				res.redirect(`/critiques/${newCritique._id}`);
 			});
-			newCritique.save(function(err, crit) {
-				console.log(`critique saved`);
-			});
+			newCritique.save(function(err, crit) {});
 		});
 	});
 }
@@ -58,7 +55,6 @@ function create(req, res) {
 function show(req, res) {
 	id = req.params.id;
 	Critique.findById(id).populate('comments').exec(function(err, critique) {
-		console.log(`THESE ARE THE COMMENTS: ${critique.comments}`);
 		res.render('critiques/show', {
 			user: req.user,
 			name: req.query.name,
@@ -71,22 +67,16 @@ function show(req, res) {
 function deleteCritique(req, res) {
 	User.findById(req.user._id, function(err, user) {
 		deletedCrit = user.critiques.indexOf(req.params.id);
-		console.log(`crit id to be deleted: ${deletedCrit}`);
 		user.critiques.splice(deletedCrit, 1);
-		user.save(function(err, user) {
-			console.log(user);
-		});
+		user.save(function(err, user) {});
 	});
 	Critique.findByIdAndDelete(req.params.id, function(err, crit) {
-		console.log(`deleted crit: ${crit}`);
 		res.redirect('/gallery');
 	});
 }
 
 function update(req, res) {
-	console.log(`updating`);
 	Critique.findByIdAndUpdate(req.params.id, req.body, function(err, crit) {
-		console.log(crit);
 		res.redirect('/gallery');
 	});
 }
@@ -102,22 +92,16 @@ function updateForm(req, res) {
 }
 
 function createComment(req, res) {
-	console.log(`commenting...`);
 	newComment = new Comment({
 		commenterName: req.user.name,
 		commenterId: req.user._id,
 		commentBody: req.body.commentBody,
 		commentDate: new Date()
 	});
-	console.log(`new comment: ${newComment}`);
-	newComment.save(function(err, comment) {
-		console.log(comment);
-	});
+	newComment.save(function(err, comment) {});
 	Critique.findById(req.params.id, function(err, critique) {
-		console.log(`before comment: ${critique}`);
 		critique.comments.push(newComment._id);
 		critique.save(function(err, crit) {
-			console.log(crit);
 			res.redirect(`/critiques/${req.params.id}`);
 		});
 	});
