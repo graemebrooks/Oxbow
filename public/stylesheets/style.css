@@ -67,7 +67,8 @@ a {
 	padding: 7px;
 }
 
-#signup-btn {
+#signup-btn,
+#start-btn {
 	font-family: 'Lato', sans-serif;
 	color: white;
 	margin: 25px;

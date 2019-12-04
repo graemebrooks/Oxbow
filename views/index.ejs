@@ -9,7 +9,11 @@
           <p id="signup-body">Begin discovering classical masterpieces and engaging in exhillerating art discourse today.</p>
       </div>
       <div>
+          <% if (!user) { %>
           <a href="/auth/google" class="btn" role="button" id="signup-btn">Signup</a>
+          <% } else { %>
+          <a href="/discover" class="btn" role="button" id="start-btn">Get Started</a>
+          <% } %>  
       </div>
     </div>
   </div>
