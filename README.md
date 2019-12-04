@@ -6,13 +6,17 @@ Oxbow is an application for aspiring art critics. Using a large collection of cl
 
 ## Views/Wireframes
 
-<img src="[drawing.jpg](https://i.imgur.com/0mDTrE1.png)" alt="drawing" width="200"/>
+<img src="https://i.imgur.com/0mDTrE1.png" alt="Landing Page" width="700"/>
+<img src="https://i.imgur.com/UiNURkZ.png" alt="Discover Page" width="700"/>
+<img src="https://i.imgur.com/qtDVhVg.png" alt="User Gallery Page" width="700"/>
+<img src="https://i.imgur.com/fSPu5op.png" alt="Critique Show Page" width="700"/>
 
+### Wireframes
 
-![Landing Page Wireframe](https://i.imgur.com/tyURba7.png)
-![Discover Page Wireframe](https://i.imgur.com/OHw3da7.png)
-![Critique Show Wireframe](https://i.imgur.com/W7j37Rz.png)
-![User Gallery Wireframe](https://i.imgur.com/y5Aynz6.png)
+<img src="https://i.imgur.com/tyURba7.png" alt="Landing Page Wireframe" width="200"/>
+<img src="https://i.imgur.com/OHw3da7.png" alt="Discover Page Wireframe" width="200"/>
+<img src="https://i.imgur.com/W7j37Rz.png" alt="Critique Show Wireframe" width="200"/>
+<img src="https://i.imgur.com/y5Aynz6.png" alt="User Gallery Wireframe" width="200"/>
 
 ## User Stories
 
